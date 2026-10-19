@@ -71,6 +71,24 @@ public abstract class Juego implements Comparable<Juego> {
 		return "==========Juego==========" + "\n" + "Titulo: " + titulo + "\n" + "Fabricante: " + fabricante + "\n"
 				+ "Año: " + anyo + "\n";
 	}
+	
+	//Saber si dos juegos son iguales si tienen igual el titulo, fabricante y año
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (this == obj) {
+			return true;
+		}
+		
+		//Si el obj NO es un objeto de tipo juego devuelve false
+		if (!(obj instanceof Juego)) { //instanceof responde a la pregunta “¿este objeto es de este tipo?” y devuelve true o false
+			return false;
+		}
+		
+		Juego otro = (Juego) obj; //Trata el objeto como Juego para poder usar el .anyo, .titulo etc
+		
+		return this.titulo.equals(otro.titulo) && this.fabricante.equals(otro.fabricante) && this.anyo == otro.anyo;
+	}
 
 	@Override
 	public int compareTo(Juego o) { /*
