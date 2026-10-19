@@ -1,11 +1,12 @@
+import java.time.LocalDate;
 
-public class Juego {
+public abstract class Juego {
 
 	//Atributos
 	private String titulo = "Sin titulo";
 	private String fabricante = "Desconocido";
 	private int anyo = 1970;
-	private int numTotJuegos = 0;
+	private static int numTotJuegos = 0;
 	
 	//Getters y setters
 	public String getTitulo() {
@@ -29,7 +30,7 @@ public class Juego {
 	}
 
 	public void setAnyo(int anyo) {
-		this.anyo = anyo;
+		this.anyo = comprobarAnyo(anyo);
 	}
 
 	public int getNumTotJuegos() {
@@ -48,9 +49,21 @@ public class Juego {
 		super();
 		this.titulo = titulo;
 		this.fabricante = fabricante;
-		this.anyo = anyo;
+		this.anyo = comprobarAnyo(anyo);
 		
 		numTotJuegos++;
+	}
+	
+	//Comprobar que  año de juego sea superior a 1970 y que no supere el año actual
+	private int comprobarAnyo(int anyo) {
+		LocalDate fechaActuaLocalDate = LocalDate.now();
+		int anyoActual = fechaActuaLocalDate.getYear();
+		
+		if (anyo > anyoActual || anyo < 1970) {
+			return anyo = 1970;
+		}else {
+			return anyo = anyo;
+		}
 	}
 	
 	
