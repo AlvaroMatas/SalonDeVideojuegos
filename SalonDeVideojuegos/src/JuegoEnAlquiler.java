@@ -53,4 +53,16 @@ public class JuegoEnAlquiler extends Juego implements Alquilable{
 		return precio;
 	}
 
+	//ToString para mostrar los datos
+	@Override
+	public String toString() {
+		return super.toString() +
+				"============JuegoEnAlquiler==========" + "\n" +
+				"Precio por dia: " + precioPorDia + "\n" + 
+				"Numero de copias disponibles: " + numCopiasDispo + "\n" +
+				"Numero de dias de alquiler: " + numDiasAlq + "\n";
+	}
+	
+	
+
 }
