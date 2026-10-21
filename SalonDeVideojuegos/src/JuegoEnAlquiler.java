@@ -24,11 +24,11 @@ public class JuegoEnAlquiler extends Juego implements Alquilable{
 	}
 	
 	//Constructor de copia
-	public JuegoEnAlquiler(JuegoEnAlquiler otro) { //JuegoEnAlquiler juego2 = new JuegoEnAlquiler(juego1); copia el juego 2 con los atributos del 1
-		super(otro.getTitulo(), otro.getFabricante(), otro.getAnyo());
-		this.precioPorDia = otro.precioPorDia;
-		this.numCopiasDispo = otro.numCopiasDispo;
-		this.numDiasAlq = otro.numDiasAlq;
+	public JuegoEnAlquiler(JuegoEnAlquiler original) { //JuegoEnAlquiler juego2 = new JuegoEnAlquiler(juego1); copia el juego 2 con los atributos del 1
+		super(original.getTitulo(), original.getFabricante(), original.getAnyo());
+		this.precioPorDia = original.precioPorDia;
+		this.numCopiasDispo = original.numCopiasDispo;
+		this.numDiasAlq = original.numDiasAlq;
 		
 		numJuegEnAlq++;
 	}
@@ -63,6 +63,4 @@ public class JuegoEnAlquiler extends Juego implements Alquilable{
 				"Numero de dias de alquiler: " + numDiasAlq + "\n";
 	}
 	
-	
-
 }
