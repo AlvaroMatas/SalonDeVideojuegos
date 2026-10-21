@@ -1,8 +1,8 @@
 
-public class JuegoEnAlquiler extends Juego{
+public class JuegoEnAlquiler extends Juego implements Alquilable{
 	
 	//Atributos
-	private double precio;
+	private double precioPorDia;
 	private int numCopiasDispo;
 	private int numDiasAlq;
 	private static int numJuegEnAlq = 0;
@@ -16,7 +16,7 @@ public class JuegoEnAlquiler extends Juego{
 
 	public JuegoEnAlquiler(String titulo, String fabricante, int anyo , double precio, int numCopiasDispo, int numDiasAlq) {
 		super(titulo, fabricante, anyo);
-		this.precio = precio;
+		this.precioPorDia = precio;
 		this.numCopiasDispo = numCopiasDispo;
 		this.numDiasAlq = numDiasAlq;
 		
@@ -26,13 +26,31 @@ public class JuegoEnAlquiler extends Juego{
 	//Constructor de copia
 	public JuegoEnAlquiler(JuegoEnAlquiler otro) { //JuegoEnAlquiler juego2 = new JuegoEnAlquiler(juego1); copia el juego 2 con los atributos del 1
 		super(otro.getTitulo(), otro.getFabricante(), otro.getAnyo());
-		this.precio = otro.precio;
+		this.precioPorDia = otro.precioPorDia;
 		this.numCopiasDispo = otro.numCopiasDispo;
 		this.numDiasAlq = otro.numDiasAlq;
 		
 		numJuegEnAlq++;
 	}
 	
+	//Metodos de la interfaz alquilable
+	@Override
+	public void alquilar() {
+		if (numCopiasDispo > 0) {
+			numCopiasDispo--;
+		}
+	}
 	
+	@Override
+	public void devolver() {
+		this.numCopiasDispo++;
+	}
+	
+	@Override
+	public double precioFinal() {
+		double precio = numDiasAlq * precioPorDia;
+		
+		return precio;
+	}
 
 }
