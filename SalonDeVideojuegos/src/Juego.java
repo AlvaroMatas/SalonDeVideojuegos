@@ -97,18 +97,22 @@ public abstract class Juego implements Comparable<Juego> {
 									 */
 
 		int resultadoComparación = this.titulo.compareTo(o.titulo);
-
+		int resultado = 0;
+		
 		if (resultadoComparación != 0) {
-			return resultadoComparación;
+			resultado = resultadoComparación;
 		} else if (resultadoComparación == 0) {
 			int comparacionFabr = this.fabricante.compareTo(o.fabricante);
 
 			if (comparacionFabr != 0) {
-				return comparacionFabr;
+				resultado = comparacionFabr;
 			}
 
+		}else {
+			resultado = Integer.compare(this.anyo, o.anyo);
 		}
-		return Integer.compare(this.anyo, o.anyo);
+		
+		return resultado;
 	}
 
 }
