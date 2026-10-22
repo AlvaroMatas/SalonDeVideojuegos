@@ -34,7 +34,7 @@ public class Test {
 		if (ja1.equals(jv1)) {
 			System.out.println("Los juegos ja1 y jv1 son iguales");
 		}else {
-			System.out.println("Los juegos ja1 y jv1 son diferente");
+			System.out.println("Los juegos ja1 y jv1 son diferentes");
 		}
 		
 		//Comprobar si ja1 y jv2 son iguales y mostrar mensaje que lo indique

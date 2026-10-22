@@ -96,19 +96,13 @@ public abstract class Juego implements Comparable<Juego> {
 									 * fabricante es menor. A igual título y fabricante, si su año es menor.
 									 */
 
-		int resultadoComparación = this.titulo.compareTo(o.titulo);
-		int resultado = 0;
+		int resultado = this.titulo.compareTo(o.titulo);
 		
-		if (resultadoComparación != 0) {
-			resultado = resultadoComparación;
-		} else if (resultadoComparación == 0) {
-			int comparacionFabr = this.fabricante.compareTo(o.fabricante);
-
-			if (comparacionFabr != 0) {
-				resultado = comparacionFabr;
-			}
-
-		}else {
+		if (resultado == 0) {
+			resultado = this.fabricante.compareTo(o.fabricante);
+		}
+		
+		if (resultado == 0) {
 			resultado = Integer.compare(this.anyo, o.anyo);
 		}
 		
