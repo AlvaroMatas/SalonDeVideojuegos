@@ -12,7 +12,7 @@ public class Test {
 		JuegoEnAlquiler ja2 = new JuegoEnAlquiler(ja1);
 		
 		//Mostrar el numero total de juegos que hay en el salon
-		System.out.println();
+		System.out.println("Numero total de juegos que hay en el salón: " + Juego.getNumTotJuegos());
 
 	}
 

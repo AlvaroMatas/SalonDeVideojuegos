@@ -33,7 +33,7 @@ public abstract class Juego implements Comparable<Juego> {
 		this.anyo = comprobarAnyo(anyo);
 	}
 
-	public int getNumTotJuegos() {
+	public static int getNumTotJuegos() {
 		return numTotJuegos;
 	}
 
